@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjectManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CostCode_Detail">
+          <Key>
+            <PropertyRef Name="CC_ID" />
+          </Key>
+          <Property Name="CC_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CC_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Prj_ID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RequestedDate" Type="datetime" />
+          <Property Name="BudgetAmount" Type="money" />
+          <Property Name="TypeofPrj" Type="tinyint" />
+          <Property Name="PrjPlatform" Type="int" />
+          <Property Name="PrjPlatformids" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CostCodePrjDetails">
+          <Key>
+            <PropertyRef Name="PrjCostCodeID" />
+          </Key>
+          <Property Name="PrjCostCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CostCodeID" Type="int" />
+          <Property Name="PrjPltformID" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="PrjPlatform">
+          <Key>
+            <PropertyRef Name="PrjPltfrmID" />
+          </Key>
+          <Property Name="PrjPltfrmID" Type="int" Nullable="false" />
+          <Property Name="PrjPltfrmName" Type="varchar" MaxLength="50" />
+          <Property Name="IsSelected" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Project_Detail">
+          <Key>
+            <PropertyRef Name="Prj_ID" />
+          </Key>
+          <Property Name="Prj_ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prj_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Date_Of_Creation" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TypeofPrj">
+          <Key>
+            <PropertyRef Name="TypeofPrjID" />
+          </Key>
+          <Property Name="TypeofPrjID" Type="tinyint" Nullable="false" />
+          <Property Name="TypeofPrjName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ProjectManagementSystemModelStoreContainer">
+          <EntitySet Name="CostCode_Detail" EntityType="Self.CostCode_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostCodePrjDetails" EntityType="Self.CostCodePrjDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrjPlatform" EntityType="Self.PrjPlatform" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_Detail" EntityType="Self.Project_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeofPrj" EntityType="Self.TypeofPrj" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CostCode_Detail">
+          <Key>
+            <PropertyRef Name="CC_ID" />
+          </Key>
+          <Property Name="CC_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CC_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prj_ID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RequestedDate" Type="DateTime" Precision="3" />
+          <Property Name="BudgetAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TypeofPrj" Type="Byte" />
+          <Property Name="PrjPlatform" Type="Int32" />
+          <Property Name="PrjPlatformids" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CostCodePrjDetail">
+          <Key>
+            <PropertyRef Name="PrjCostCodeID" />
+          </Key>
+          <Property Name="PrjCostCodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CostCodeID" Type="Int32" />
+          <Property Name="PrjPltformID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Byte" />
+        </EntityType>
+        <EntityType Name="PrjPlatform">
+          <Key>
+            <PropertyRef Name="PrjPltfrmID" />
+          </Key>
+          <Property Name="PrjPltfrmID" Type="Int32" Nullable="false" />
+          <Property Name="PrjPltfrmName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSelected" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Project_Detail">
+          <Key>
+            <PropertyRef Name="Prj_ID" />
+          </Key>
+          <Property Name="Prj_ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prj_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Creation" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TypeofPrj">
+          <Key>
+            <PropertyRef Name="TypeofPrjID" />
+          </Key>
+          <Property Name="TypeofPrjID" Type="Byte" Nullable="false" />
+          <Property Name="TypeofPrjName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ProjectManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CostCode_Detail" EntityType="Self.CostCode_Detail" />
+          <EntitySet Name="CostCodePrjDetails" EntityType="Self.CostCodePrjDetail" />
+          <EntitySet Name="PrjPlatforms" EntityType="Self.PrjPlatform" />
+          <EntitySet Name="Project_Detail" EntityType="Self.Project_Detail" />
+          <EntitySet Name="TypeofPrjs" EntityType="Self.TypeofPrj" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectManagementSystemModelStoreContainer" CdmEntityContainer="ProjectManagementSystemEntities">
+          <EntitySetMapping Name="CostCode_Detail">
+            <EntityTypeMapping TypeName="ProjectManagementSystemModel.CostCode_Detail">
+              <MappingFragment StoreEntitySet="CostCode_Detail">
+                <ScalarProperty Name="CC_ID" ColumnName="CC_ID" />
+                <ScalarProperty Name="CC_Name" ColumnName="CC_Name" />
+                <ScalarProperty Name="Prj_ID" ColumnName="Prj_ID" />
+                <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
+                <ScalarProperty Name="BudgetAmount" ColumnName="BudgetAmount" />
+                <ScalarProperty Name="TypeofPrj" ColumnName="TypeofPrj" />
+                <ScalarProperty Name="PrjPlatform" ColumnName="PrjPlatform" />
+                <ScalarProperty Name="PrjPlatformids" ColumnName="PrjPlatformids" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostCodePrjDetails">
+            <EntityTypeMapping TypeName="ProjectManagementSystemModel.CostCodePrjDetail">
+              <MappingFragment StoreEntitySet="CostCodePrjDetails">
+                <ScalarProperty Name="PrjCostCodeID" ColumnName="PrjCostCodeID" />
+                <ScalarProperty Name="CostCodeID" ColumnName="CostCodeID" />
+                <ScalarProperty Name="PrjPltformID" ColumnName="PrjPltformID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrjPlatforms">
+            <EntityTypeMapping TypeName="ProjectManagementSystemModel.PrjPlatform">
+              <MappingFragment StoreEntitySet="PrjPlatform">
+                <ScalarProperty Name="PrjPltfrmID" ColumnName="PrjPltfrmID" />
+                <ScalarProperty Name="PrjPltfrmName" ColumnName="PrjPltfrmName" />
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Detail">
+            <EntityTypeMapping TypeName="ProjectManagementSystemModel.Project_Detail">
+              <MappingFragment StoreEntitySet="Project_Detail">
+                <ScalarProperty Name="Prj_ID" ColumnName="Prj_ID" />
+                <ScalarProperty Name="Prj_Name" ColumnName="Prj_Name" />
+                <ScalarProperty Name="Date_Of_Creation" ColumnName="Date_Of_Creation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeofPrjs">
+            <EntityTypeMapping TypeName="ProjectManagementSystemModel.TypeofPrj">
+              <MappingFragment StoreEntitySet="TypeofPrj">
+                <ScalarProperty Name="TypeofPrjID" ColumnName="TypeofPrjID" />
+                <ScalarProperty Name="TypeofPrjName" ColumnName="TypeofPrjName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

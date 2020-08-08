@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProjectManagementWebAPI.Models.CostCode_DetailViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CC_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CC_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prj_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeofPrj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrjPlatform)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrjPlatformids)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CC_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CC_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prj_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BudgetAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeofPrj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrjPlatform)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrjPlatformids)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.CC_ID  }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CC_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CC_ID })
+        </td>
+    </tr>
+}
+
+</table>

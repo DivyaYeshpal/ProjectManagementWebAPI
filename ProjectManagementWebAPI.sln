@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementWebAPI", "ProjectManagementWebAPI.csproj", "{53A252C8-6D28-493D-A317-24C18EDDF7C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementMVC", "..\ProjectManagementMVC\ProjectManagementMVC.csproj", "{491E2CAA-FB2D-4D63-89B9-BB16FA8D2F59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53A252C8-6D28-493D-A317-24C18EDDF7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A252C8-6D28-493D-A317-24C18EDDF7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A252C8-6D28-493D-A317-24C18EDDF7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A252C8-6D28-493D-A317-24C18EDDF7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{491E2CAA-FB2D-4D63-89B9-BB16FA8D2F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491E2CAA-FB2D-4D63-89B9-BB16FA8D2F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491E2CAA-FB2D-4D63-89B9-BB16FA8D2F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491E2CAA-FB2D-4D63-89B9-BB16FA8D2F59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A3BF901-D443-4A76-95D7-3FDBBE132C1A}
+	EndGlobalSection
+EndGlobal
